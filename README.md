@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm KETHAN KRISHNA P K</h1>
+<h1 align="center">Hi 👋, I'm KETHAN KRISHNA PK</h1>
 <h3 align="center">Coding the Future | Pushing Boundaries through Innovation</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=kethankrk&label=Profile%20views&color=0e75b6&style=flat" alt="kethankrk" /> </p>
