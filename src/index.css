@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.anim::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    width: 0;
+    background-color: hsl(var(--p));
+    border-radius: 50px;
+    transition: width 0.5s ease;
+}
+
+.anim:hover::before{
+    width: 100%;
+}
+
+.live::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background-color: hsl(var(--p));
+    border-radius: 50px;
+    transition: width 0.5s ease;
+}
