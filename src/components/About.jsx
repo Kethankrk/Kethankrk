@@ -12,7 +12,7 @@ export default function About() {
   return (
     <div id="about" className="flex flex-col items-center md:flex-row gap-14 md:items-center max-w-[1000px] mx-auto">
       <div className="w-2/3 sm:w-2/3  md:1/4 lg:w-1/3 rounded-xl bg-base-100 h-full">
-        <img src="/programmer.png" alt="portrait" className="rounded-xl" />
+        <img src="programmer.png" alt="portrait" className="rounded-xl" />
       </div>
       <div className="w-full sm:w-2/3 md:3/4 lg:w-2/3">
         <h2 className="text-4xl font-semibold pb-4 text-center md:text-start">About Me</h2>

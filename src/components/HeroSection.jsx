@@ -14,7 +14,7 @@ export default function HeroSection() {
         <h1 className="text-6xl">Krishna PK from India</h1>
       </div>
       <div className="w-1/2 hidden md:flex justify-center items-center">
-        <img className="w-[200px]" src="/hero.webp" alt="" />
+        <img className="w-[200px]" src="hero.webp" alt="" />
       </div>
     </div>
   );
