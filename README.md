@@ -18,4 +18,5 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=kethankrk&show_icons=true&locale=en" alt="kethankrk" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=kethankrk&" alt="kethankrk" /></p>
+<p><img src="https://github-profile-trophy.vercel.app/?username=Namithamano&theme=gruvbox"/></p>
 
