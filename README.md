@@ -25,7 +25,7 @@
   </div>
   <br><br><br><br><br><br><br><br><br>
   <div align="center">
-    <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=kethankrk&show_icons=true&count_private=true&langs_count=10&hide=ruby&locale=en&layout=compact&hide_border=true&theme=react" alt="langs" />
+    <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=kethankrk&show_icons=true&count_private=true&langs_count=10&hide=ruby&locale=en&layout=compact&hide_border=true&theme=react" alt="langs" />
 	</div>
 	</p>
 <br/>
