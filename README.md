@@ -18,8 +18,8 @@
 
 ## Stats
 <br>
-<p align=center>
-  <div align=center>
+<p align="center">
+  <div align="center">
     <img align="left" width=396 src="https://github-readme-streak-stats.herokuapp.com/?user=kethankrk&theme=react&hide_border=true&bg_color=0D1117" alt="streak" />
     <img align="right" width=396 src="https://github-readme-stats.vercel.app/api?username=kethankrk&show_icons=true&count_private=true&theme=react&border_color=61dafb&hide_border=true&count_private=true&show_icons=false" alt="stats" />
   </div>
