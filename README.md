@@ -9,10 +9,6 @@
 <a href="https://medium.com/@kethankrk" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@kethankrk" height="30" width="40" /></a>
 <a href="https://www.leetcode.com/kethankrk" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="kethankrk" height="30" width="40" /></a>
 </p>
-
-<br/>
-<br/>
-<br/>
 <br/>
 
 <h3 align="left">Languages and Tools:</h3>
@@ -28,7 +24,7 @@
     <img align="right" width=396 src="https://github-readme-stats.vercel.app/api?username=kethankrk&show_icons=true&count_private=true&theme=react&border_color=61dafb&hide_border=true&count_private=true&show_icons=false" alt="stats" />
   </div>
   <br><br><br><br><br><br><br><br><br>
-  <div align="left">
+  <div align="center">
     <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=kethankrk&show_icons=true&count_private=true&langs_count=10&hide=ruby&locale=en&layout=compact&hide_border=true&theme=react" alt="langs" />
 	</div>
 	</p>
