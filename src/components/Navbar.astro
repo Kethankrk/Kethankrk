@@ -1,0 +1,173 @@
+---
+import HoverButton from "./HoverButton.astro";
+---
+
+<nav class="flex justify-center h-[100px] items-center">
+  <div class="container flex justify-between items-center">
+    <p class="text-xl font-medium">
+      <span class="text-accent">K</span>ETHAN
+    </p>
+    <div class="flex gap-6">
+      <ul class="hidden md:flex">
+        <div class="nav-item">
+          <a href="/">
+            <li><span>1.</span> Home</li>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#project">
+            <li><span>2.</span> Projects</li>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#about">
+            <li><span>3.</span> About</li>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#contact">
+            <li><span>4.</span> Contact</li>
+          </a>
+        </div>
+      </ul>
+      <div class="hidden md:block">
+        <a
+          href="https://drive.google.com/file/d/1ZWXg-w9AaCaPIrVPD9wXx4eP-s1x4Vwg/view?usp=sharing"
+          target="_blank"
+        >
+          <HoverButton>Resume</HoverButton>
+        </a>
+      </div>
+    </div>
+    <div class="w-[30px] md:hidden cursor-pointer" id="menu-btn">
+      <svg
+        id="menu-svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="#000000"
+        ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+          <path
+            d="M4 6H20M4 12H20M4 18H20"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </g></svg
+      >
+    </div>
+    <div
+      class="p-10 bg-black absolute top-0 right-0 min-h-screen inactive"
+      id="side-menu"
+    >
+      <ul class="flex flex-col gap-4 items-center">
+        <div class="nav-item">
+          <li>Home</li>
+        </div>
+        <div class="nav-item">
+          <li>Projects</li>
+        </div>
+        <div class="nav-item">
+          <li>About</li>
+        </div>
+        <div class="nav-item">
+          <li>Contact</li>
+        </div>
+        <br /><br />
+        <a
+          href="https://drive.google.com/file/d/1ZWXg-w9AaCaPIrVPD9wXx4eP-s1x4Vwg/view?usp=sharing"
+          target="_blank"
+        >
+          <HoverButton>Resume</HoverButton>
+        </a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  li {
+    font-size: 15px;
+    color: white;
+    transition: color 100ms;
+  }
+
+  .nav-item {
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 200ms;
+  }
+  .nav-item:hover {
+    background-color: #2b2b2b;
+    cursor: pointer;
+  }
+
+  .nav-item:hover li {
+    color: #3afc7e;
+  }
+
+  button {
+    padding: 8px 15px;
+    border-radius: 20px;
+    background-color: #2b2b2b;
+    font-size: small;
+    font-weight: 500;
+    transition: all 200ms;
+  }
+  button:hover {
+    scale: 1.05;
+    background-color: #242424;
+  }
+
+  .active {
+    opacity: 1;
+    visibility: visible;
+    width: fit-content;
+    transition: all 250ms ease;
+  }
+  .inactive {
+    opacity: 0;
+    width: 0px;
+    /* z-index: -999; */
+    visibility: hidden;
+    right: 10px;
+    /* display: none; */
+    transition: all 250ms ease;
+  }
+
+  span {
+    color: #3afc7e;
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const sideMenu = document.getElementById("side-menu");
+
+  let isOpen = false;
+
+  const handleMenuClose = (e: any) => {
+    const targetId = e.target.id;
+    console.log(targetId);
+    if (
+      targetId != "menu-svg" &&
+      targetId != "side-menu" &&
+      targetId != "menu-btn"
+    ) {
+      sideMenu!.classList.replace("active", "inactive");
+      console.log("removing event listener");
+      document.removeEventListener("click", handleMenuClose);
+      isOpen = false;
+    }
+  };
+  menuBtn?.addEventListener("click", () => {
+    if (!isOpen) {
+      sideMenu?.classList.replace("inactive", "active");
+      document.addEventListener("click", handleMenuClose);
+      isOpen = true;
+    }
+  });
+</script>

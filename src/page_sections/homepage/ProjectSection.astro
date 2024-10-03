@@ -1,0 +1,23 @@
+---
+import IndexedTitle from "../../components/IndexedTitle.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+import { projects } from "../../data/data";
+---
+
+<section class="py-32" id="project">
+  <IndexedTitle index="02">Projects</IndexedTitle>
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          stack={project.stack}
+          github={project.github}
+          link={project.link}
+        />
+      ))
+    }
+  </div>
+</section>

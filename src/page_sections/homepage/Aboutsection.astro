@@ -1,0 +1,79 @@
+---
+import IndexedTitle from "../../components/IndexedTitle.astro";
+---
+
+<section
+  class="py-32 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-0"
+  id="about"
+>
+  <div>
+    <IndexedTitle index="01">About Me</IndexedTitle>
+    <p class="mb-4 text-dim">
+      I am a passionate software developer and tech enthusiast focusing strongly
+      on backend development and DevOps. Having started coding at a young age, I
+      thrive on solving complex problems and continuously seek to learn new
+      technologies and skills. My journey in tech fuels my curiosity and drive
+      to create innovative solutions that make a difference.
+    </p>
+    <p class="text-dim">
+      I have spent countless hours coding personal and commercial projects,
+      honing my skills and expanding my knowledge. I am always on the lookout
+      for opportunities to build new, innovative, and useful products that can
+      have a positive impact on the world.
+    </p>
+  </div>
+  <div class="flex items-center justify-center">
+    <div class="img-container w-[250px] lg:w-[300px]">
+      <img loading="lazy" src="/dev.avif" alt="developer avatar" />
+    </div>
+  </div>
+</section>
+
+<style>
+  img {
+    border-radius: 5px;
+  }
+
+  .img-container {
+    border-radius: 5px;
+    position: relative;
+    transition: transform 250ms ease;
+  }
+
+  .img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #3afc7e;
+    opacity: 20%;
+    transition: opacity 250ms ease;
+  }
+
+  .img-container:hover::before {
+    opacity: 0%;
+  }
+  .img-container::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    border: 2px solid #3afc7e;
+    border-radius: 5px;
+    pointer-events: none;
+    transition: transform 250ms ease;
+  }
+
+  .img-container:hover::after {
+    transform: translate(10px, 10px);
+  }
+
+  .img-container:hover {
+    transform: translate(-5px, -5px);
+  }
+</style>

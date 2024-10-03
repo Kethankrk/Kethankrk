@@ -1,0 +1,21 @@
+---
+const { paddingX = 6, paddingY = 10 } = Astro.props;
+---
+
+<button style=`padding: ${paddingX}px ${paddingY}px`>
+  <slot />
+</button>
+
+<style>
+  button {
+    border: 1px solid #3afc7e;
+    border-radius: 5px;
+    color: #3afc7e;
+    transition: all 300ms;
+  }
+
+  button:hover {
+    box-shadow: 3px 3px #3afc7e;
+    transform: translate(-5px, -5px);
+  }
+</style>

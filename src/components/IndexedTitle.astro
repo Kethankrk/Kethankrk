@@ -1,0 +1,20 @@
+---
+const { index } = Astro.props;
+---
+
+<div class="flex items-center gap-5 mb-10">
+  <h2><span class="text-bright">{index}.</span> <slot>Title</slot></h2>
+  <div class="w-full max-w-[400px] h-[1px] bg-dim"></div>
+</div>
+<style>
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    text-wrap: nowrap;
+  }
+
+  h2 span {
+    font-size: 20px;
+    font-weight: normal;
+  }
+</style>
