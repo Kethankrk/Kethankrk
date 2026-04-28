@@ -6,17 +6,54 @@ export interface projectType {
   link?: string;
 }
 
+export interface ExperienceType {
+  role: string;
+  company: string;
+  employment: string;
+  timeline: string;
+  location: string;
+  workMode: string;
+  /** Optional brand mark under `/public` */
+  logoSrc?: string;
+  /** Shown when `logoSrc` is omitted */
+  initials?: string;
+}
+
+export const experiences: ExperienceType[] = [
+  {
+    role: "Co-Founder and R&D Engineer",
+    company: "Dalton Vector",
+    employment: "Full-time",
+    timeline: "Jan 2026 - Present · 4 mos",
+    location: "England, United Kingdom",
+    workMode: "Hybrid",
+    initials: "DV"
+  },
+  {
+    role: "Research and Development Executive",
+    company: "Exthgen",
+    employment: "Full-time",
+    timeline: "Apr 2025 - Dec 2025 · 9 mos",
+    location: "Kozhikode, Kerala, India",
+    workMode: "On-site",
+    initials: "E",
+  },
+  {
+    role: "Full Stack Developer",
+    company: "Investersmate",
+    employment: "Part-time",
+    timeline: "Oct 2024 - Apr 2025 · 7 mos",
+    location: "Australia",
+    workMode: "Remote",
+    initials: "IM",
+  },
+];
+
+/** Grouped for consistency; keep aligned with on-site copy (hero / about). */
 export const skills = {
-  "Programming Languages": [
-    "Python",
-    "Javascript",
-    "Golang",
-    "C",
-    "Java",
-    "Dart",
-    "Rust",
-  ],
-  Domains: ["Web Development", "Android Development"],
+  "AI & multimodal": ["Python", "PyTorch", "Hugging Face", "Speech / ASR"],
+  "Structured AI & APIs": ["FastAPI", "BAML", "PostgreSQL"],
+  "Shipping & UI": ["Docker", "Celery", "React", "Tailwind CSS"],
 };
 
 export const projects: projectType[] = [

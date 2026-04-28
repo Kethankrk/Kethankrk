@@ -3,10 +3,12 @@ import HoverButton from "./HoverButton.astro";
 ---
 
 <nav class="flex justify-center h-[100px] items-center">
-  <div class="container flex justify-between items-center">
+  <div class="container flex justify-between items-center relative">
     <p class="text-xl font-medium">
       <span class="text-accent">K</span>ETHAN
     </p>
+    
+    <!-- Desktop Menu -->
     <div class="flex gap-6">
       <ul class="hidden md:flex">
         <div class="nav-item">
@@ -15,20 +17,20 @@ import HoverButton from "./HoverButton.astro";
           </a>
         </div>
         <div class="nav-item">
-          <a href="#project">
-            <li><span>2.</span> Projects</li>
-          </a>
-        </div>
-        <div class="nav-item">
           <a href="#about">
-            <li><span>3.</span> About</li>
+            <li><span>2.</span> About</li>
           </a>
         </div>
         <div class="nav-item">
-          <a href="#contact">
-            <li><span>4.</span> Contact</li>
+          <a href="#experience">
+            <li><span>3.</span> Experience</li>
           </a>
         </div>
+        <!-- <div class="nav-item">
+          <a href="#project">
+            <li><span>4.</span> Projects</li>
+          </a>
+        </div> -->
       </ul>
       <div class="hidden md:block">
         <a
@@ -39,52 +41,61 @@ import HoverButton from "./HoverButton.astro";
         </a>
       </div>
     </div>
-    <div class="w-[30px] md:hidden cursor-pointer" id="menu-btn">
+
+    <!-- Mobile Menu Button -->
+    <div class="w-[30px] md:hidden cursor-pointer z-50 text-white" id="menu-btn">
       <svg
         id="menu-svg"
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        stroke="#000000"
-        ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-          id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
-          <path
-            d="M4 6H20M4 12H20M4 18H20"
-            stroke="#ffffff"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-        </g></svg
+        stroke="currentColor"
       >
+        <path
+          d="M4 6H20M4 12H20M4 18H20"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
     </div>
-    <div
-      class="p-10 bg-black absolute top-0 right-0 min-h-screen inactive"
-      id="side-menu"
-    >
-      <ul class="flex flex-col gap-4 items-center">
-        <div class="nav-item">
-          <li>Home</li>
-        </div>
-        <div class="nav-item">
-          <li>Projects</li>
-        </div>
-        <div class="nav-item">
-          <li>About</li>
-        </div>
-        <div class="nav-item">
-          <li>Contact</li>
-        </div>
-        <br /><br />
-        <a
-          href="https://drive.google.com/file/d/1ZWXg-w9AaCaPIrVPD9wXx4eP-s1x4Vwg/view?usp=sharing"
-          target="_blank"
-        >
-          <HoverButton>Resume</HoverButton>
-        </a>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="menu-backdrop" class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="side-menu" class="fixed top-0 right-0 bottom-0 z-50 w-[75vw] max-w-sm bg-secondary flex flex-col justify-center transition-transform duration-300 translate-x-full shadow-2xl md:hidden">
+      
+      <button id="close-btn" class="absolute top-8 right-8 text-white hover:text-bright transition-colors p-2" aria-label="Close menu">
+        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <ul class="flex flex-col gap-6 items-center list-none m-0 p-0 w-full">
+        <li class="nav-item w-3/4 text-center">
+          <a class="side-nav-link text-lg block py-2" href="/"><span>1.</span> Home</a>
+        </li>
+        <li class="nav-item w-3/4 text-center">
+          <a class="side-nav-link text-lg block py-2" href="#about"><span>2.</span> About</a>
+        </li>
+        <li class="nav-item w-3/4 text-center">
+          <a class="side-nav-link text-lg block py-2" href="#experience"><span>3.</span> Experience</a>
+        </li>
+        <!-- <li class="nav-item w-3/4 text-center">
+          <a class="side-nav-link text-lg block py-2" href="#project"><span>4.</span> Projects</a>
+        </li> -->
+        <li class="mt-6">
+          <a
+            href="https://drive.google.com/file/d/1ZWXg-w9AaCaPIrVPD9wXx4eP-s1x4Vwg/view?usp=sharing"
+            target="_blank"
+          >
+            <HoverButton>Resume</HoverButton>
+          </a>
+        </li>
       </ul>
     </div>
+
   </div>
 </nav>
 
@@ -109,6 +120,17 @@ import HoverButton from "./HoverButton.astro";
     color: #3afc7e;
   }
 
+  .side-nav-link {
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    transition: color 100ms;
+  }
+
+  .nav-item:hover .side-nav-link {
+    color: #3afc7e;
+  }
+
   button {
     padding: 8px 15px;
     border-radius: 20px;
@@ -122,22 +144,6 @@ import HoverButton from "./HoverButton.astro";
     background-color: #242424;
   }
 
-  .active {
-    opacity: 1;
-    visibility: visible;
-    width: fit-content;
-    transition: all 250ms ease;
-  }
-  .inactive {
-    opacity: 0;
-    width: 0px;
-    /* z-index: -999; */
-    visibility: hidden;
-    right: 10px;
-    /* display: none; */
-    transition: all 250ms ease;
-  }
-
   span {
     color: #3afc7e;
   }
@@ -145,29 +151,34 @@ import HoverButton from "./HoverButton.astro";
 
 <script>
   const menuBtn = document.getElementById("menu-btn");
+  const closeBtn = document.getElementById("close-btn");
   const sideMenu = document.getElementById("side-menu");
+  const backdrop = document.getElementById("menu-backdrop");
+  const navLinks = document.querySelectorAll("#side-menu a");
 
   let isOpen = false;
 
-  const handleMenuClose = (e: any) => {
-    const targetId = e.target.id;
-    console.log(targetId);
-    if (
-      targetId != "menu-svg" &&
-      targetId != "side-menu" &&
-      targetId != "menu-btn"
-    ) {
-      sideMenu!.classList.replace("active", "inactive");
-      console.log("removing event listener");
-      document.removeEventListener("click", handleMenuClose);
-      isOpen = false;
-    }
+  const openMenu = () => {
+    sideMenu?.classList.remove("translate-x-full");
+    backdrop?.classList.remove("opacity-0", "pointer-events-none");
+    backdrop?.classList.add("opacity-100", "pointer-events-auto");
+    document.body.style.overflow = "hidden";
+    isOpen = true;
   };
-  menuBtn?.addEventListener("click", () => {
-    if (!isOpen) {
-      sideMenu?.classList.replace("inactive", "active");
-      document.addEventListener("click", handleMenuClose);
-      isOpen = true;
-    }
+
+  const closeMenu = () => {
+    sideMenu?.classList.add("translate-x-full");
+    backdrop?.classList.remove("opacity-100", "pointer-events-auto");
+    backdrop?.classList.add("opacity-0", "pointer-events-none");
+    document.body.style.overflow = "";
+    isOpen = false;
+  };
+
+  menuBtn?.addEventListener("click", openMenu);
+  closeBtn?.addEventListener("click", closeMenu);
+  backdrop?.addEventListener("click", closeMenu);
+  
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 </script>
